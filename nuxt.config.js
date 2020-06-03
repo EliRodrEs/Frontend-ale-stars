@@ -12,7 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Questrial&family=Scada&display=swap'}
     ]
   },
   /*
@@ -23,6 +24,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/css/main'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -45,12 +47,31 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyA495aZWH14wxBpj_rmwFW1K9rUimWu8Q4",
+          authDomain: "ale-stars.firebaseapp.com",
+          databaseURL: "https://ale-stars.firebaseio.com",
+          projectId: "ale-stars",
+          storageBucket: "ale-stars.appspot.com",
+          messagingSenderId: "807249069911",
+          appId: "1:807249069911:web:f53667889ffef53661a012",
+          measurementId: "G-W7D48H3Q76"
+        },
+        services: {
+          auth: true
+        }
+      }
+    ]
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: "http://localhost:3000"
   },
   /*
   ** Build configuration

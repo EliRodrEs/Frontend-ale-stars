@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-gray: #35383F;
+  --main-orange: #FC9935;
+  --main-white: #D5D9BA;
+
+  --disable-gray: #616368;
+  --disable-orange: #F6AC61;
+  --disable-white: #D9DCC4;
+
+  --correct-color: #C5D982;
+  --error-color: #D97A7A;
+
+  --titles-font: 'Scada', sans-serif;
+  --common-font: 'Questrial', sans-serif;
+}
+
+/* GENERAL SETTINGS */
+body {
+  font-family: var(--common-font);
+  line-height: 1.5rem;
+  background-color: var(--main-gray);
+}
+
+input{
+  background: none;
+  border: none;
+  border-bottom: 3px solid;
+  border-color: var(--main-orange);
+  margin-bottom: 15px;
+  color: var(--main-orange);
+}
+
+input:focus {
+  background: none;
+  color: var(--main-orange);
+  outline: none;
+}
+
+::placeholder {
+  color: var(--main-orange);
+}
+
+a:visited {
+  color: var(--main-white);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Para poner las cerves de fondo */
+/* .bg-image-intro {
+  background-image: url();
+} */
+
+
+/* HELPER CLASSES */
+
+.btn-main {
+  background-color: var(--main-orange);
+  border-radius: 20px;
+  padding: 5px 30px;
+  display: block;
+  color: var(--main-white);
+  margin-top: 20px;
+}
+
+.form {
+  color: var(--main-orange)
+}
+
+.white-link {
+  color: var(--main-white);
+}
+
+.big-titles {
+  font-size: 2rem;
+  font-family: var(--titles-font);
+  color: var(--main-orange);
+  margin-bottom: 35vh;
+}
+
+

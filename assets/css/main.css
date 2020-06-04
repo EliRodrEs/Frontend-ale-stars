@@ -71,6 +71,7 @@ a {
   display: block;
   color: var(--main-white);
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .form {
@@ -86,6 +87,16 @@ a {
   font-family: var(--titles-font);
   color: var(--main-orange);
   margin-bottom: 35vh;
+}
+
+.total-height {
+  height: 100vh;
+}
+
+.text-body-p {
+  text-align: center;
+  color: var(--main-white);
+
 }
 
 

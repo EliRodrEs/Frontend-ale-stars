@@ -10,7 +10,8 @@
             <input type="text" v-model="email" class="col align-self-center" placeholder="User email">
             <input type="password" v-model="password" class="col align-self-center" placeholder="Password">
             <button @click="login" class="btn-main btn col align-self-center">LOG IN</button>
-            <a href="#" @click="showLogin=false" class="white-link col align-self-center">¿crear cuenta?</a>
+            <a href="#" @click="showLogin=false" class="white-link col align-self-center">New here? Create an account!</a>
+            <a href="/pageResetPassword" @click="resetPassword" class="white-link col align-self-center">Forgot your password?</a>
           </div>
           <div v-else class="form col">
             <input type="text" v-model="name" placeholder="Name" class="col align-self-center">
@@ -18,7 +19,8 @@
             <input type="email" v-model="email" placeholder="Email" class="col align-self-center">
             <input type="password" v-model="password" placeholder="Password" class="col align-self-center">
             <button @click="createUser" class="btn-main btn col align-self-center">Crear</button>
-            <a href="#" @click="showLogin=true" class="white-link col align-self-center">¿ya tienes cuenta?</a>
+            <a href="#" @click="showLogin=true" class="white-link col align-self-center">Do you have an account?</a>
+
           </div>
       </div>
 
@@ -47,6 +49,16 @@ export default {
     this.checkAuth();
   },
   methods: {
+/*     resetpassword(){
+      let auth = firebase.auth()
+      let email = this.email
+
+      auth.sendPasswordResetEmail(email).then(function (){
+        //email sent
+      }). catch(err) {
+        //An error happened
+      }
+    }, */
     checkAuth(){
       this.isAuth = window.localStorage.getItem("token")!= null
     },

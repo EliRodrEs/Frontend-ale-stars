@@ -24,7 +24,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/css/main'
+    /* '@/assets/css/main' */
+    '@/assets/scss/index.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -64,7 +65,16 @@ export default {
           auth: true
         }
       }
-    ]
+    ],
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        }
+      ]
+    }]
   ],
   /*
   ** Axios module configuration

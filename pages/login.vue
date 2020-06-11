@@ -1,21 +1,21 @@
 <template>
   <div>
     <SecondNav></SecondNav>
-    <reset-password> </reset-password>
+    <auth></auth>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import resetPassword from '@/components/resetPassword.vue'
 import MainNavWeb from '@/components/MainNavWeb.vue'
+import auth from '@/components/auth.vue'
 import SecondNav from '@/components/SecondNav.vue'
 
 export default {
   components: {
     Logo,
-    resetPassword,
     MainNavWeb,
+    auth,
     SecondNav
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div>
     <SecondNav></SecondNav>
-    <section id="Top-rated-beers">
-      <h1 style="color:#fff;font-size:1rem;">Aquí tienen que aparecer las cerves más votadas</h1>
+    <div>
+      <h1 class="text-center" id="quote">"<span class="or-span">Beauty</span> is in the eyes of the <span class="or-span">Beerholder</span>"</h1>
+    </div>
       <Beers></Beers>
-    </section>
   </div>
 </template>
 
@@ -19,4 +19,3 @@ export default {
   }
 }
 </script>
-

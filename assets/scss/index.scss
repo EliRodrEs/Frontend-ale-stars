@@ -1,0 +1,145 @@
+/* IMPORTS */
+@import "colours";
+@import "fonts";
+@import "bootstrap";
+@import "buttons";
+@import "images";
+@import "inputs";
+@import "beers-table";
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL SETTINGS */
+body {
+  font-family: $common-font;
+  line-height: 1.5rem;
+  background-color: $main-gray;
+}
+
+input{
+  background: none;
+  border: none;
+  border-bottom: 3px solid;
+  border-color: $main-white;
+  margin-bottom: 15px;
+  color: $main-gray;
+}
+
+input:focus {
+  background: none;
+  color: $main-white;
+  outline: none;
+}
+
+::placeholder {
+  color: $main-white;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: $main-white;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: $main-gray;
+  background-color: $main-white;
+}
+
+#quote {
+  font-size: 1.1rem;
+  font-family: $titles-font;
+  font-style: italic;
+  color: $main-white;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+}
+.or-span {
+  color: $main-orange;
+}
+
+/* Para poner las cerves de fondo */
+/* .bg-image-intro {
+  background-image: url();
+} */
+
+/* HELPER CLASSES */
+
+
+.form {
+  color: $main-orange
+}
+
+.big-titles {
+  font-size: 2rem;
+  font-family: $titles-font;
+  color: $main-orange;
+/*   margin-bottom: 35vh; */
+}
+
+.total-height {
+  height: 100vh;
+}
+
+.text-body-p {
+  text-align: center;
+  color: $main-white;
+
+}
+
+.list {
+  list-style: none;
+}
+
+
+/* NAV BAR */
+.navBar {
+  position: sticky;
+  top: 0;
+  background-color: $main-orange;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-left:  1rem;
+  padding-right:  1rem;
+  width: 100vw;
+  z-index:10;
+
+}
+#new-nav-bar {
+  background-color: $main-orange;
+}
+.navBar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navBar ul li a {
+  padding: 0.50rem;
+  margin: 0 0.25rem;
+}
+
+#logo-web {
+  display: inline-block;
+  color: $main-gray;
+  padding-left: 1.2rem;
+
+}
+
+.main-logo-img {
+  color: $main-white;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+
+}
+
+.a-logo:hover {
+  background: transparent;
+}

@@ -9,7 +9,7 @@
            <div class="w-100"></div><!-- Sin estas dos segundas líneas, no baja al fondo xDDD -->
           <div class="form col">
             <input type="text" v-model="email" class="col align-self-center" placeholder="User email">
-            <button @click="resetPassword, goToEmailSent()" class="btn-main btn col align-self-center">SEND EMAIL</button>
+            <button @click="resetPassword" class="btn-main btn col align-self-center">SEND EMAIL</button>
             <a href="/"  class="white-link col align-self-center text-center">Return home</a>
           </div>
 
@@ -27,22 +27,18 @@ export default {
     }
   },
   methods: {
-    goToEmailSent(){
-      location.href='/emailSent'
-    },
-
-    resetpassword(){
-      let auth = firebase.auth()
-      let email = this.email
-
+    async resetPassword(){
+      let email = {
+        email : this.email
+      }
       try {
-        auth.sendPasswordResetEmail(email).then(function (){
-        //email sent
-        })
-      } catch (e) {
-        //An error happened
+        let response = await this.$axios.post('auth/resetPassword', email)
+        location.href='/emailSent'
+      } catch (err) {
+        alert(err.message)
       }
     }
   }
+
 }
 </script>

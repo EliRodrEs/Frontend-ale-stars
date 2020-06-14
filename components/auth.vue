@@ -9,7 +9,7 @@
             <input type="text" v-model="email" class="col align-self-center" placeholder="User email">
             <input type="password" v-model="password" class="col align-self-center" placeholder="Password">
             <button @click="login" class="btn-main btn col align-self-center">LOG IN</button>
-            <a href="#" @click="showLogin=false" class="white-link col align-self-center">New here? Create an account!</a>
+            <a href="#" @click="showCreateUser" class="white-link col align-self-center">New here? Create an account!</a>
             <a href="/pageResetPassword" class="white-link col align-self-center">Forgot your password?</a>
           </div>
           <div v-else class="form col">
@@ -38,7 +38,6 @@ export default {
       isAuth: false,
       email: "",
       password: "",
-      orders: [],
       showLogin: true,
       name: "",
       surname: ""
@@ -48,6 +47,11 @@ export default {
     this.checkAuth();
   },
   methods: {
+    showCreateUser(){
+      this.email = ""
+      this.password = ""
+      this.showLogin=false
+    },
     checkAuth(){
       this.isAuth = window.localStorage.getItem("token")!= null
     },
@@ -57,6 +61,10 @@ export default {
         password: this.password,
         name: this.name,
         surname: this.surname,
+        beerFav: this.beerFav,
+        beerHate: this.beerHate,
+        beerWish: this.beerWish,
+        beerDone: this.beerDone
       }
 
       try{
@@ -66,12 +74,17 @@ export default {
         this.name = ""
         this.password = ""
         this.surname = ""
+        this.beerFav = []
+        this.beerHate = []
+        this.beerWish = []
+        this.beerDone = []
+
       }catch(err){
         alert(err.message)
       }
     },
     async logout(){
-      window.localStorage.removeItem("token")
+      window.localStorage.clear()
       this.checkAuth()
     },
     async login(){
@@ -82,6 +95,13 @@ export default {
       try{
         let response = await this.$axios.post("auth", loginData)
         window.localStorage.setItem("token",response.data.token)
+        window.localStorage.setItem("id", response.data.id)
+        window.localStorage.setItem("name", response.data.name)
+        window.localStorage.setItem("email", response.data.email)
+        window.localStorage.setItem("beerFav",  JSON.stringify(response.data.beerFav))
+        window.localStorage.setItem("beerHate", JSON.stringify(response.data.beerHate))
+        window.localStorage.setItem("beerWish", JSON.stringify(response.data.beerWish))
+        window.localStorage.setItem("beerDone", JSON.stringify(response.data.beerDone))
 
         this.checkAuth()
         location.href='/'

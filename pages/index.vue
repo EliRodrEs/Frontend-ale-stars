@@ -1,8 +1,8 @@
 <template>
   <div>
     <SecondNav></SecondNav>
+    <h1 class="text-center quote" style="font-size:1.5rem;">DA' BEST <span class="or-span">BEERS</span>!!</h1>
     <section id="Top-rated-beers">
-      <h1 style="color:#fff;font-size:1rem;">Aquí tienen que aparecer las cerves más votadas</h1>
       <Beers></Beers>
     </section>
   </div>
@@ -16,7 +16,11 @@ export default {
   components: {
     Beers,
     SecondNav
-  }
+  },
+  methods: {
+
+  },
+
 }
 </script>
 

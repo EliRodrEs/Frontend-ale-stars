@@ -1,3 +1,5 @@
+
+/* NAVBAR THINGS */
 .navbar-dark .navbar-nav .nav-link {
   color: $main-gray;
   font-style: normal;
@@ -7,22 +9,42 @@ em {
 }
 
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
-  color: $main-white;
+  color: $main-gray;
+}
+
+.navbar-toggler-icon {
+  color: $main-gray;
+}
+
+.dropdown-menu {
+  background-color: $main-gray;
+  color: $main-gray;
+}
+
+.dropdown-item {
+  color: $main-orange;
 }
 
 
-.beer-card {
+/* CARD THINGS */
+.own-card {
   background-color: $main-orange;
   color: $main-gray;
+  border-radius: none;
+  border: none;
+  margin-bottom: 15px;
 }
 .card-title {
   font-family: $titles-font;
   color: $main-white;
 }
-.beer-card ul {
+.text-muted {
+  color: $main-gray;
+}
+.own-card ul {
   text-align: center;
 }
-.beer-card li {
+.own-card li {
   display: inline-block;
   margin: 0.3rem 0.5rem;
   color: $main-white;
@@ -30,4 +52,15 @@ em {
 .beer-desc {
   text-align: justify;
 }
+.card-text a:hover {
+  background-color: transparent;
+}
 
+.own-card-profile {
+  background-color: transparent;
+  color: $main-orange;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}

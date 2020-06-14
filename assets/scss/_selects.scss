@@ -1,0 +1,18 @@
+.custom-select {
+  background-color: $main-gray;
+  color: $main-orange;
+  font-family: $titles-font;
+  outline-style: none;
+  border-color: $main-orange;
+
+}
+.custom-select:focus {
+  border-color: $main-orange;
+  outline-style: none;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.25)
+}
+
+.custom-select:hover {
+  background-color: $main-gray;
+  color: $main-orange;
+}

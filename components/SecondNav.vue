@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark"  id="new-nav-bar">
-      <b-navbar-brand href="/" class="a-logo"><h1 class="big-titles" id="logo-web"> <span><fa icon="beer" class="main-logo-img"/></span>ALE-STARS</h1></b-navbar-brand>
+      <b-navbar-brand href="/" class="a-logo"><h1 class="big-titles" id="logo-web"> ALE-  <span><fa icon="beer" class="main-logo-img"/></span>-STARS</h1></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <!-- Right aligned nav items -->
@@ -24,7 +24,7 @@
               <template v-slot:button-content>
                 <em class="white-link">USER</em>
               </template>
-                <b-dropdown-item href="#">PROFILE</b-dropdown-item>
+                <b-dropdown-item href="/userProfile">PROFILE</b-dropdown-item>
                 <b-dropdown-item @click="logout">LOG OUT</b-dropdown-item>
             </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -61,7 +61,7 @@ data(){
       this.isAuth = window.localStorage.getItem("token")!= null
     },
     async logout(){
-      window.localStorage.removeItem("token")
+      window.localStorage.clear()
       this.checkAuth()
     }
   }

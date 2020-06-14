@@ -6,6 +6,7 @@
 @import "images";
 @import "inputs";
 @import "beers-table";
+@import "selects";
 
 /* RESET */
 * {
@@ -27,7 +28,7 @@ input{
   border-bottom: 3px solid;
   border-color: $main-white;
   margin-bottom: 15px;
-  color: $main-gray;
+  color: $main-orange;
 }
 
 input:focus {
@@ -52,7 +53,7 @@ a:hover {
   background-color: $main-white;
 }
 
-#quote {
+.quote {
   font-size: 1.1rem;
   font-family: $titles-font;
   font-style: italic;
@@ -139,7 +140,10 @@ a:hover {
   margin-right: 0.5rem;
 
 }
-
+.a-logo {
+  margin-left: 30px;
+  padding-top: 10px;
+}
 .a-logo:hover {
   background: transparent;
 }

@@ -7,3 +7,45 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+  color: $main-white;
+  background-color: transparent;
+  border: none;
+}
+.btn-secondary {
+  color: $main-gray;
+  background-color: transparent;
+  border: none;
+}
+.btn-secondary:hover {
+  color: $main-white;
+  border: none;
+  background-color: transparent;
+}
+.btn-secondary:focus {
+  border: none;
+}
+
+.btn {
+  padding: 0px;
+}
+
+b-button {
+  border: none;
+  border-color: transparent
+}
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.button:active,
+ button:active,
+.button:focus,
+ button:focus,
+.button:hover,
+ button:hover{
+    border:none !important;
+    outline:none !important;
+}

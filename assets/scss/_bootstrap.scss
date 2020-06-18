@@ -25,8 +25,16 @@ em {
   color: $main-orange;
 }
 
+.nav-pills .nav-link.active  {
+background-color: $main-orange;
+color: $main-white;
+}
 
 /* CARD THINGS */
+.card {
+  border: none;
+  background-color: transparent;
+}
 .own-card {
   background-color: $main-orange;
   color: $main-gray;
@@ -63,4 +71,12 @@ em {
   border: none;
   border-radius: 0;
   margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: $main-gray;
+  border-color: $main-orange;
+}
+.tab-content {
+  background-color: $main-gray;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-select v-model="selected" :options="options" class="mb-3" @Change="changeStyle(value)">
+    <b-form-select v-model="styleSelected" :options="options" class="mb-3" @change="changeStyle">
       <!-- This slot appears above the options from 'options' prop -->
       <template v-slot:first>
         <b-form-select-option :value="null">-- Style --</b-form-select-option>
@@ -16,9 +16,8 @@ export default {
   props: ["value"],
   data() {
     return {
-      selected: null,
+      styleSelected: null,
       options: [
-        { value: "", text: "Select Style" },
         { value: "Brown Ale", text: "Brown Ale" },
         { value: "IPA", text: "IPA" },
         { value: "Pilsner", text: "Pilsner" },
@@ -27,8 +26,8 @@ export default {
     };
   },
   methods: {
-    changeStyle(value) {
-      this.$emit("styleSelected", value);
+    changeStyle() {
+      this.$emit("styleSelected", this.styleSelected);
     }
   }
 };

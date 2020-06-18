@@ -2,16 +2,16 @@
   <div id="filter-group" class="container">
     <ul class="list row">
       <li class="col-6">
-        <beerCountry :value="country"></beerCountry>
+        <beerCountry :value="country" @countrySelected="handleCountryChange"></beerCountry>
       </li>
       <li class="col-6">
-        <beerGrad :value="grad"></beerGrad>
+        <beerGrad :value="grad" @gradSelected="handleGradChange"></beerGrad>
       </li>
       <li class="col-6">
-        <beerStyle :value="style"></beerStyle>
+        <beerStyle :value="style" @styleSelected="handleStyleChange"></beerStyle>
       </li>
       <li class="col-6">
-        <beerType :value="type"></beerType>
+        <beerType :value="type" @typeSelected="handleTypeChange"></beerType>
       </li>
     </ul>
   </div>
@@ -27,12 +27,12 @@ import beerType from "@/components/beerFilters/beerType";
 export default {
   data() {
     return {
-      country: "",
-      grad: "",
-      style: "",
-      type: ""
-    };
-  },
+        country: "",
+        grad: "",
+        style: "",
+        type: ""
+      }
+    },
   components: {
     beerCountry,
     beerGrad,
@@ -41,23 +41,30 @@ export default {
   },
   methods: {
     buildQuery() {
-      const query = {};
-      if (this.country !== "") {
-        query.country = this.country;
-      }
-      if (this.grad !== "") {
-        query.grad = this.grad;
-      }
-      if (this.style !== "") {
-        query.style = this.style;
-      }
-      if (this.type !== "") {
-        query.type = this.type;
-      }
-      return query;
+      const query = {
+        country: this.country,
+        grad: this.grad,
+        style: this.style,
+        type: this.type
+      };
+
+      this.$emit("filterChanged", query);
     },
-    async executeQuery() {
-      const response = await this.$axios.get("beers", { params: buildQuery() });
+    handleCountryChange(countrySelected) {
+      this.country = countrySelected
+      this.buildQuery();
+    },
+    handleGradChange(gradSelected) {
+      this.grad = gradSelected;
+      this.buildQuery();
+    },
+    handleStyleChange(styleSelected) {
+      this.style = styleSelected
+      this.buildQuery();
+    },
+    handleTypeChange(typeSelected) {
+      this.type = typeSelected
+      this.buildQuery();
     }
   }
 };

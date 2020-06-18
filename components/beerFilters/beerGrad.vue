@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-select v-model="selected" :options="options" @Change="changeGrad(value)" class="mb-3">
+    <b-form-select v-model="gradSelected" :options="options" @change="changeGrad" class="mb-3">
       <!-- This slot appears above the options from 'options' prop -->
       <template v-slot:first>
         <b-form-select-option :value="null">-- ABV --</b-form-select-option>
@@ -14,18 +14,17 @@ export default {
   props: ["value"],
   data() {
     return {
-      selected: null,
+      gradSelected: null,
       options: [
-        { value: "", text: "Select grad" },
-        { value: "x < 6", text: "<6%" },
-        { value: "6<= x < 9", text: "Between 6% and 9%" },
-        { value: "9<= x", text: ">9%" }
+        { value: "1", text: "<6%" },
+        { value: "2", text: "Between 6% and 9%" },
+        { value: "3", text: ">9%" }
       ]
     };
   },
   methods: {
-    changeGrad(value) {
-      this.$emit("gradSelected", value);
+    changeGrad() {
+      this.$emit("gradSelected", this.gradSelected);
     }
   }
 };

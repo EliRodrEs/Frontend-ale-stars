@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-form-select
-      v-model="selected"
+      v-model="countrySelected"
       :options="options"
-      @Change="changeCountry(value)"
+      @change="changeCountry"
       class="mb-3"
     >
       <!-- This slot appears above the options from 'options' prop -->
@@ -19,9 +19,8 @@ export default {
   props: ["value"],
   data() {
     return {
-      selected: null,
+      countrySelected: null,
       options: [
-        { value: "", text: "Select country" },
         { value: "Australia", text: "Australia" },
         { value: "Belgium", text: "Belgium" },
         { value: "Germany", text: "Germany" },
@@ -32,8 +31,8 @@ export default {
     };
   },
   methods: {
-    changeCountry(value) {
-      this.$emit("countrySelected", value);
+    changeCountry() {
+      this.$emit("countrySelected", this.countrySelected);
     }
   }
 };

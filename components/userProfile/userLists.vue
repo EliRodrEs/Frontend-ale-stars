@@ -1,61 +1,37 @@
 <template>
-  <div>
-    <div>
-      <b-card no-body>
-        <b-card-header header-tag="nav">
-          <b-nav card-header pills justified>
-            <b-nav-item @click.prevent="showFavs">Fav Beers</b-nav-item>
-            <b-nav-item @click.prevent="showHates">Hate Beers</b-nav-item>
-            <b-nav-item @click.prevent="showDone">Done Beers</b-nav-item>
-            <b-nav-item @click.prevent="showWish">Wish Beers</b-nav-item>
-          </b-nav>
-        </b-card-header>
-
-        <b-card-body>
-          <b-card-title :title="title"> {{this.title}} </b-card-title>
-
-          <b-card-text>
-            {{this.user.beers}}
-          </b-card-text>
-        </b-card-body>
-      </b-card>
-    </div>
+  <div class="container">
+    <b-card no-body>
+      <b-tabs pills card justified>
+        <b-tab title="Fav Beers" active>
+          <FavBeersArray></FavBeersArray>
+        </b-tab>
+        <b-tab title="Wished Beers">
+          <WishedBeersArray></WishedBeersArray>
+        </b-tab>
+        <b-tab title="Done Beers">
+          <DoneBeersArray></DoneBeersArray>
+        </b-tab>
+        <b-tab title="Hated Beers">
+          <HatedBeersArray></HatedBeersArray>
+        </b-tab>
+      </b-tabs>
+    </b-card>
   </div>
 </template>
 
 <script>
+import FavBeersArray from '@/components/userProfile/userArrays/FavBeersArray'
+import WishedBeersArray from '@/components/userProfile/userArrays/WishedBeersArray'
+import DoneBeersArray from '@/components/userProfile/userArrays/DoneBeersArray'
+import HatedBeersArray from '@/components/userProfile/userArrays/HatedBeersArray'
 
 export default {
-  data() {
-    return {
-      user: {
-        title:"",
-        beers: [],
-      },
-    };
-  },
-  async mounted() {
-
-  },
-  methods: {
-  async showFavs(){
-    let userID = window.localStorage.getItem('id')
-    let response = await this.$axios.get(`beers`);
-    this.user.beers = response.data
-    }
-  },
-    async showHates(){
-    let userID = window.localStorage.getItem('id')
-    let response = await this.$axios.get(`beers`);
-    this.user.beers = response.data
-  },
-  showDone(){
-    let userID = window.localStorage.getItem('id')
-    this.user.beers = JSON.parse(localStorage.getItem("beerDone"))
-  },
-    showWish(){
-    let userID = window.localStorage.getItem('id')
-    this.user.beers = JSON.parse(localStorage.getItem("beerWish"))
+  components: {
+    FavBeersArray,
+    WishedBeersArray,
+    DoneBeersArray,
+    HatedBeersArray
   }
+
 };
 </script>

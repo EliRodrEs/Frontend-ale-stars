@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark"  id="new-nav-bar">
-      <b-navbar-brand href="/" class="a-logo"><h1 class="big-titles" id="logo-web"> ALE-  <span><fa icon="beer" class="main-logo-img"/></span>-STARS</h1></b-navbar-brand>
+      <b-navbar-brand href="/" class="a-logo justify-self-center"><h1 class="big-titles" id="logo-web"> ALE <span><fa icon="beer" class="main-logo-img"/></span>STARS</h1></b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <!-- Right aligned nav items -->

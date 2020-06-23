@@ -8,7 +8,7 @@
            <h1 class="col big-titles align-self-end"> </h1>
            <div class="w-100"></div><!-- Sin estas dos segundas líneas, no baja al fondo xDDD -->
           <div class="form col">
-            <input type="text" v-model="email" class="col align-self-center" placeholder="User email">
+            <input type="text" v-model="email" class="col align-self-center global-input" placeholder="User email">
             <button @click="resetPassword" class="btn-main btn col align-self-center">SEND EMAIL</button>
             <a href="/"  class="white-link col align-self-center text-center">Return home</a>
           </div>

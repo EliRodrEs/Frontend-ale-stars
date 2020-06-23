@@ -9,7 +9,7 @@
           <b-navbar-nav>
             <b-nav-item href="/" >HOME</b-nav-item>
             <b-nav-item href="/beers" >BEERS</b-nav-item>
-            <b-nav-item href="/" >CONTACT</b-nav-item>
+            <b-nav-item href="/contact" >CONTACT</b-nav-item>
           </b-navbar-nav>
             <b-nav-item-dropdown right v-if="!isAuth">
             <!-- Using 'button-content' slot -->

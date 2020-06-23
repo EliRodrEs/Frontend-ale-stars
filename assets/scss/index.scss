@@ -9,6 +9,7 @@
 @import "selects";
 @import "alerts";
 @import "animation";
+@import "forms";
 
 /* RESET */
 * {
@@ -24,7 +25,7 @@ body {
   background-color: $main-gray;
 }
 
-input{
+.global-input{
   background: none;
   border: none;
   border-bottom: 3px solid;
@@ -33,7 +34,7 @@ input{
   color: $main-orange;
 }
 
-input:focus {
+.global-input:focus {
   background: none;
   color: $main-white;
   outline: none;

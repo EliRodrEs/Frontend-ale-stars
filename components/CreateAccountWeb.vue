@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row">
-      <input type="text" v-model="name" placeholder="Name" class="col align-self-center">
-      <input type="text" v-model="surname" placeholder="Surname" class="col align-self-center">
-      <input type="email" v-model="email" placeholder="Email" class="col align-self-center">
-      <input type="password" v-model="password" placeholder="Password" class="col align-self-center">
+      <input type="text" v-model="name" placeholder="Name" class="col align-self-center global-input">
+      <input type="text" v-model="surname" placeholder="Surname" class="col align-self-center global-input">
+      <input type="email" v-model="email" placeholder="Email" class="col align-self-center global-input">
+      <input type="password" v-model="password" placeholder="Password" class="col align-self-center global-input">
       <button @click="createUser" class="btn-main btn col align-self-center">Crear</button>
       <a href="/login"  class="white-link col align-self-center">Do you have an account?</a>
     </div>

@@ -47,7 +47,7 @@ color: $main-white;
   color: $main-white;
 }
 .text-muted {
-  color: $main-gray;
+  color: $disable-gray !important;
 }
 .own-card ul {
   text-align: center;

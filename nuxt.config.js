@@ -82,7 +82,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: "http://localhost:3000"
+    baseURL: "https://ale-stars.herokuapp.com"
   },
   /*
   ** Build configuration

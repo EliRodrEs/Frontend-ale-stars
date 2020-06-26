@@ -49,11 +49,11 @@ export default {
           title: 'Your account has been saved',
           showConfirmButton: false,
         })
-/*      this.email = ""
+        this.email = ""
         this.name = ""
         this.password = ""
         this.surname = ""
-        location.href = "/login" */
+        location.href = "/login"
       }catch(err){
         alert(err.message)
       }

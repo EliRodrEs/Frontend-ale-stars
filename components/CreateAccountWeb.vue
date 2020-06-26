@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
+
 export default {
   data(){
     return {
@@ -41,11 +43,17 @@ export default {
 
       try{
         let userCreated = await this.$axios.post('users', newUser)
-
-        this.email = ""
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your account has been saved',
+          showConfirmButton: false,
+        })
+/*      this.email = ""
         this.name = ""
         this.password = ""
         this.surname = ""
+        location.href = "/login" */
       }catch(err){
         alert(err.message)
       }

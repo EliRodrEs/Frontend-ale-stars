@@ -30,7 +30,7 @@
     "express": "^4.17.1",
     "express-bearer-token": "^2.4.0",
     "firebase": "^7.14.6",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-sweetalert2": "^1.0.0",
